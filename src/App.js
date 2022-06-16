@@ -6,6 +6,10 @@ import MovieItem from './MovieItem';
 import { useMovieForm } from './useMovieForm';
 
 function App() {
+  const [currentFilter, setFilter] = useState('');
+  const [movies, setMovies] = useState('');
+  const [filteredMovies, setFilteredMovies] = useState('');
+
   return (
     <div className="App">
 
