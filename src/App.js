@@ -3,7 +3,7 @@ import './App.css';
 import MovieForm from './MovieForm';
 import MovieList from './MovieList';
 import MovieItem from './MovieItem';
-import { useMovieForm } from './useMovieForm';
+import useMovieForm from './useMovieForm';
 
 function App() {
   const [currentFilter, setFilter] = useState('');
