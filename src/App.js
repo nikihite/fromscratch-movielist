@@ -10,9 +10,27 @@ function App() {
   const [movies, setMovies] = useState('');
   const [filteredMovies, setFilteredMovies] = useState('');
 
+  const {
+    titleForm, setTitleForm,
+    directorForm, setDirectorForm,
+    yearForm, setYearForm,
+    colorForm, setColorForm,
+  } = useMovieForm();
+
   return (
     <div className="App">
-
+      <div className='current=movie-section'>
+        <MovieForm
+          titleForm={titleForm}
+          setTitleForm={setTitleForm}
+          directorForm={directorForm}
+          setDirectorForm={setDirectorForm}
+          yearForm={yearForm}
+          setYearForm={setYearForm}
+          colorForm={colorForm}
+          setColorForm={setColorForm}
+        />
+      </div>
     </div>
   );
 }
