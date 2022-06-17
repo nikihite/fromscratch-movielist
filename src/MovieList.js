@@ -1,7 +1,6 @@
 import MovieItem from './MovieItem';
 
 export default function MovieList({ movies, deleteMovie }) {
-  console.log(movies);
   return (
     <div className='movie-list'>
       {
