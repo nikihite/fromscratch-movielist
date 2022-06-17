@@ -17,6 +17,13 @@ function App() {
     colorForm, setColorForm,
   } = useMovieForm();
 
+  useEffect(() => {
+    const filteredMovies = movies.
+      filter(movie =>
+        movie.title.includes(currentFilter));
+    setFilteredMovies(filteredMovies);
+  }, [currentFilter, movies]);
+
   function addMovie(newMovie) {
     const updatedMovies = [...movies, newMovie];
 
