@@ -46,6 +46,9 @@ function App() {
           />
         }
       </div>
+      <p>Filter Movies</p>
+      <input value={currentFilter} onChange={(e) => setFilter(e.target.value)} />
+      <
     </div>
   );
 }
