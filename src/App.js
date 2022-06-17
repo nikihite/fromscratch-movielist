@@ -23,6 +23,13 @@ function App() {
     setMovies(updatedMovies);
   }
 
+  function deleteMovie(title) {
+    const index = movies.findIndex(movie => movie.title === title);
+    movies.splice(index, 1);
+    setFilter('');
+    setMovies([...movies]);
+  }
+
   return (
     <div className="App">
       <div className='current=movie-section'>
@@ -48,7 +55,13 @@ function App() {
       </div>
       <p>Filter Movies</p>
       <input value={currentFilter} onChange={(e) => setFilter(e.target.value)} />
-      <
+      <MovieList movies={
+        filteredMovies.length
+          ? filteredMovies
+          : movies
+      }
+      deleteMovie={deleteMovie}
+      />
     </div>
   );
 }
