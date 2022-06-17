@@ -62,6 +62,7 @@ function App() {
           />
         }
       </div>
+      Click On Movie To Delete
       <MovieList movies={
         filteredMovies.length > 0
           ? filteredMovies

@@ -45,7 +45,8 @@ export default function MovieForm({
     </label>
     <label>
       <select value={colorForm} onChange={e => setColorForm(e.target.value)}>
-        <option value='lightcoral'>Pick Your Background Color</option>
+        <option value='blank'>Pick Your Background Color</option>
+        <option value='lightcoral'>Coral</option>
         <option value='lightblue'>Blue</option>
         <option value='lightpink'>Pink</option>
         <option value='lightgreen'>Green</option>

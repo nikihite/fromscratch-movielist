@@ -4,7 +4,6 @@ body {
     background-color: rgb(39, 42, 49);
     height: 100%;
     font-family: 'Anton', sans-serif;
-
 }
 
 .App {
@@ -55,10 +54,12 @@ button {
     color: white;
     margin: 5px;
     font-family: 'Anton', sans-serif;
+    font-size: 20px;
 }
 
 button:hover {
-    border: 1px solid greenyellow;
+    border: 3px solid white;
+    background-color: greenyellow;
 }
 
 .niki-pic {
@@ -75,4 +76,22 @@ form {
 label, p {
     margin: 5px;
     font-size: 25px;
+}
+
+.movie-list {
+    display: flex;
+    flex-direction: row;
+    width: 500px;
+}
+
+.movie-item {
+    margin: 5px;
+    border: 2px solid white;
+    width: 150px;
+    height: 200px;
+    text-align: center;
+}
+
+.movie-item:hover {
+    border: 3px solid greenyellow;
 }
