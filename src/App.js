@@ -17,6 +17,12 @@ function App() {
     colorForm, setColorForm,
   } = useMovieForm();
 
+  function addMovie(newMovie) {
+    const updatedMovies = [...movies, newMovie];
+
+    setMovies(updatedMovies);
+  }
+
   return (
     <div className="App">
       <div className='current=movie-section'>
@@ -29,7 +35,16 @@ function App() {
           setYearForm={setYearForm}
           colorForm={colorForm}
           setColorForm={setColorForm}
+          addMovie={addMovie}
         />
+        {
+          titleForm && <MovieItem
+            title={titleForm}
+            director={directorForm}
+            year={yearForm}
+            color={colorForm}
+          />
+        }
       </div>
     </div>
   );
