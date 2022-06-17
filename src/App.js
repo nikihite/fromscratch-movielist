@@ -7,8 +7,8 @@ import useMovieForm from './useMovieForm';
 
 function App() {
   const [currentFilter, setFilter] = useState('');
-  const [movies, setMovies] = useState('');
-  const [filteredMovies, setFilteredMovies] = useState('');
+  const [movies, setMovies] = useState([]);
+  const [filteredMovies, setFilteredMovies] = useState(movies);
 
   const {
     titleForm, setTitleForm,
@@ -19,8 +19,7 @@ function App() {
 
   useEffect(() => {
     const filteredMovies = movies.
-      filter(movie =>
-        movie.title.includes(currentFilter));
+      filter(movie => movie.title.includes(currentFilter));
     setFilteredMovies(filteredMovies);
   }, [currentFilter, movies]);
 
@@ -39,7 +38,10 @@ function App() {
 
   return (
     <div className="App">
-      <div className='current=movie-section'>
+      <img className="niki-pic" src='../nikisflick.png'/>
+      <p>Filter Movies</p>
+      <input value={currentFilter} onChange={(e) => setFilter(e.target.value)} />
+      <div className='current-movie-section'>
         <MovieForm
           titleForm={titleForm}
           setTitleForm={setTitleForm}
@@ -60,10 +62,8 @@ function App() {
           />
         }
       </div>
-      <p>Filter Movies</p>
-      <input value={currentFilter} onChange={(e) => setFilter(e.target.value)} />
       <MovieList movies={
-        filteredMovies.length
+        filteredMovies.length > 0
           ? filteredMovies
           : movies
       }

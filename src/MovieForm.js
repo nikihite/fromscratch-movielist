@@ -44,13 +44,12 @@ export default function MovieForm({
       <input required value={yearForm} onChange={e => setYearForm(e.target.value)}/>
     </label>
     <label>
-        Poster color
       <select value={colorForm} onChange={e => setColorForm(e.target.value)}>
-        <option value='red'>Red</option>
-        <option value='lightblue'>Light Blue</option>
-        <option value='lightpink'>Light Pink</option>
-        <option value='blue'>Blue</option>
-        <option value='orange'>Orange</option>
+        <option value='lightcoral'>Pick Your Background Color</option>
+        <option value='lightblue'>Blue</option>
+        <option value='lightpink'>Pink</option>
+        <option value='lightgreen'>Green</option>
+        <option value='lightseagreen'>Teal</option>
       </select>
     </label>
 

@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+
+body {
+    background-color: rgb(39, 42, 49);
+    height: 100%;
+    font-family: 'Anton', sans-serif;
+
+}
+
+.App {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+}
+
+.current-movie-section {
+    margin-top: 10px;
+    margin-bottom: 20px;
+    display: flex;
+}
+
+.movie-list {
+    width: 100px;
+}
+
+input {
+    background-color: rgb(39, 42, 49);
+    border: 1px solid white;
+    margin: 5px;
+    height: 25px;
+    color: white;
+    font-family: 'Anton', sans-serif;
+}
+
+input:hover {
+    border: 1px solid greenyellow;
+}
+
+select {
+    background-color: rgb(39, 42, 49);
+    border: 1px solid white;
+    color: white;
+    font-size: 20px;
+    font-family: 'Anton', sans-serif;
+}
+
+select:hover {
+    border: 1px solid greenyellow;
+}
+
+button {
+    background-color: rgb(39, 42, 49);
+    border: 1px solid white;
+    color: white;
+    margin: 5px;
+    font-family: 'Anton', sans-serif;
+}
+
+button:hover {
+    border: 1px solid greenyellow;
+}
+
+.niki-pic {
+    width: 250px;
+    margin: 0px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+label, p {
+    margin: 5px;
+    font-size: 25px;
+}
