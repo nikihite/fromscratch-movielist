@@ -6,9 +6,9 @@ import MovieItem from './MovieItem';
 import useMovieForm from './useMovieForm';
 
 function App() {
-  const [currentFilter, setFilter] = useState('');
   const [movies, setMovies] = useState([]);
-  const [filteredMovies, setFilteredMovies] = useState(movies);
+  const [filteredMovies, setFilteredMovies] = useState([]);
+  const [filterString, setFilterString] = useState('');
 
   const {
     titleForm, setTitleForm,
@@ -18,10 +18,16 @@ function App() {
   } = useMovieForm();
 
   useEffect(() => {
-    const filteredMovies = movies.
-      filter(movie => movie.title.includes(currentFilter));
+    setFilteredMovies(movies);
+    setFilterString('');
+  }, [movies]);
+
+  function filterMovies(filterString) {
+    setFilterString(filterString);
+    const filteredMovies = movies
+      .filter(movie => movie.title.includes(filterString));
     setFilteredMovies(filteredMovies);
-  }, [currentFilter, movies]);
+  }
 
   function addMovie(newMovie) {
     const updatedMovies = [...movies, newMovie];
@@ -32,15 +38,22 @@ function App() {
   function deleteMovie(title) {
     const index = movies.findIndex(movie => movie.title === title);
     movies.splice(index, 1);
-    setFilter('');
-    setMovies([...movies]);
+    setFilteredMovies([...movies]);
   }
 
   return (
     <div className="App">
       <img className="niki-pic" src='../nikisflick.png'/>
-      <p>Filter Movies</p>
-      <input value={currentFilter} onChange={(e) => setFilter(e.target.value)} />
+
+      <div>
+        <MovieItem
+          title={titleForm}
+          director={directorForm}
+          year={yearForm}
+          color={colorForm}
+        />
+      </div>
+
       <div className='current-movie-section'>
         <MovieForm
           titleForm={titleForm}
@@ -53,15 +66,13 @@ function App() {
           setColorForm={setColorForm}
           addMovie={addMovie}
         />
-        {
-          titleForm && <MovieItem
-            title={titleForm}
-            director={directorForm}
-            year={yearForm}
-            color={colorForm}
-          />
-        }
       </div>
+
+      <div className='filter'>
+        <p>Filter Movies</p>
+        <input value={filterString} onChange={(e) => filterMovies(e.target.value)} />
+      </div>
+      
       Click On Movie To Delete
       <MovieList movies={
         filteredMovies.length > 0
